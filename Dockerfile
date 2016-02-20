@@ -1,3 +1,4 @@
 FROM alpine
-RUN apk --update add openjdk8-jre
-CMD /usr/bin/java -version
+RUN echo "http://dl-4.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
+    apk add --update openjdk8 && \
+    rm /var/cache/apk/*
